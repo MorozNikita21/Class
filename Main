@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1-ая дата: ");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int z = sc.nextInt();
+        Data d1 = new Data(x,y,z);
+        d1.print();
+        System.out.println("2-ая дата: ");
+        int day = sc.nextInt();
+        int month = sc.nextInt();
+        int year = sc.nextInt();
+        Data d2 = new Data(day,month,year);
+        d2.print();
+        System.out.println("Разность 2-ух дат: ");
+        d1.raz(d2);
+        System.out.println("Номер дня: ");
+        d1.search();
+        System.out.println("Добавьте дни: ");
+        int k = sc.nextInt();
+        Data d3 = d1.add(k);
+        d3.print();
+    }
+}
