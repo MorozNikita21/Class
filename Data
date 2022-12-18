@@ -1,0 +1,44 @@
+import java.util.*;
+public class Data {
+    int day;
+    int month;
+    int year;
+    Data(int day, int month, int year){
+        while(day > 30){
+            month = month + 1;
+            day = day - 30;
+        }
+        while (month > 12){
+            year = year + 1;
+            month = month - 12;
+        }
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+    void print(){
+        System.out.println("Дней: " + day);
+        System.out.println("Месяц: " + month);
+        System.out.println("Год: " + year);
+    }
+    void raz(Data a) {
+        System.out.println(Math.abs(this.year - a.year)*364 + Math.abs(this.month - a.month)*30 +  Math.abs(this.day - a.day) + " - day");
+    }
+    void search(){
+        System.out.println(this.month * 30 + this.day);
+    }
+    Data add(int days){
+        int d = day + days;
+        int m = month;
+        int y = year;
+        while(d > 30){
+            m = m + 1;
+            d = d - 30;
+        }
+        while (m > 12){
+            y = y + 1;
+            m = m - 12;
+        }
+        return new Data(d,m,y);
+    }
+}
